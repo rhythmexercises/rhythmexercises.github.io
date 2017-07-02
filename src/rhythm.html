@@ -1,0 +1,22 @@
+<template>
+
+  <dl>
+    <dt>Rhythm</dt>
+    <dd><code>${notes}</code></dd>
+    <dt>French</dt>
+    <dd>${french}</dd>
+    <dt>Other</dt>
+    <dd>
+      <ul repeat.for="name of names">
+        <li>${name}</li>
+      </ul>
+    </dd>
+    <dt>Count</dt>
+    <dd>${count}</dd>
+  </dl>
+
+  <template repeat.for="exercise of exercises">
+    <compose view-model.bind="exercise" containerless></compose>
+  </template>
+
+</template>

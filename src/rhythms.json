@@ -1,0 +1,41 @@
+[
+  {
+    "french": "taa",
+    "names": [
+      "crotchet",
+      "quarter note"
+    ],
+    "count": "1 beat",
+    "notes": [":8 E/4"]
+  },
+  {
+    "french": "rest",
+    "names": [
+      "crotchet rest",
+      "quarter note rest"
+    ],
+    "count": "1 beat",
+    "notes": [":8 ##"]
+  },
+  {
+    "french": "tafa-fe",
+    "names": [
+      "semiquaver quaver semiquaver",
+      "sixteenth note, eigth note, sixteenth note"
+    ],
+    "count": "1/4 beat + 1/2 beat + 1/4 beat",
+    "notes": [
+      ":16 E-EbE-E/4",
+      ":16S E/4 :8S E/4 :16S E/4"
+    ]
+  },
+  {
+    "french": "ta - te",
+    "names": [
+      "dotted - quaver - semiquaver",
+      "dotted eigth note and sixteenth note"
+    ],
+    "count": "3/4 beat + 1/4 beat",
+    "notes": [":8d E/4 :16 E/4"]
+  }
+]
