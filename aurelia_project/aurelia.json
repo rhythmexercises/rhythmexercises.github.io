@@ -26,10 +26,10 @@
     "source": "src/**/*.html"
   },
   "cssProcessor": {
-    "id": "none",
-    "displayName": "None",
-    "fileExtension": ".css",
-    "source": "src/**/*.css"
+    "id": "sass",
+    "displayName": "SASS",
+    "fileExtension": ".scss",
+    "source": "src/**/*.scss"
   },
   "editor": {
     "id": "atom",

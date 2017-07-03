@@ -19,7 +19,7 @@ export class App {
       },
     ]);
 
-    config.fallbackRoute('0');
+    config.fallbackRoute('1');
   }
 
 }

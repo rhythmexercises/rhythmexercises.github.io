@@ -1,0 +1,8 @@
+.container {
+  display: flex;
+
+  > div {
+    flex: 0 1 auto;
+    padding: 0 1em;
+  }
+}

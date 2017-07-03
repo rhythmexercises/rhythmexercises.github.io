@@ -1,14 +1,14 @@
 export class Exercise {
 
-  constructor(item, items) {
-    console.log('Exercise', 'constructor', item, items);
+  constructor(rhythms) {
+    console.log('Exercise', 'constructor', rhythms);
 
-    this.rhythm = item || {};
-    this.rhythms = items || [];
+    this.rhythms = rhythms || [];
   }
 
   activate() {
     console.log('Exercise', 'activate', arguments);
+
     // TODO: Do construction of tree here?
   }
 
