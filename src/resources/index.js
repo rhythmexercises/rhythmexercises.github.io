@@ -1,3 +1,6 @@
 export function configure(config) {
-  //config.globalResources([]);
+  config.globalResources([
+    './elements/vextab',
+    './value-converters/vextab',
+  ]);
 }

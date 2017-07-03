@@ -6,10 +6,12 @@ export class Exercise {
     this.rhythms = rhythms || [];
   }
 
+  /*
   activate() {
     console.log('Exercise', 'activate', arguments);
 
     // TODO: Do construction of tree here?
   }
+  */
 
 }

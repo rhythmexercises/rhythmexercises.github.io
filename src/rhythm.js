@@ -196,6 +196,7 @@ export class Rhythm {
     this.exercises = this.getExercises().map(function (exercise) {
 
       // Replace each index with notes.
+      /*
       var out = [];
       var i = exercise.length;
       while (i--) {
@@ -206,8 +207,9 @@ export class Rhythm {
           out[i] += items[exercise[i][j]].notes;
         }
       }
+      */
 
-      return model(out);
+      return model(exercise);
     });
 
     // Generate exercises.
