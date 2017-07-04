@@ -11,11 +11,16 @@ export class VexflowValueConverter {
 
   toView(notes, type = 'tabstave') {
     //console.log('Vexflow', notes, type);
-    var res = type + ' clef=percussion notation=true tablature=false\nnotes ';
+    var res = '';
     for (var i = 0; i < notes.length; i++) {
       if (res) res += ' ';
-      res += this.rhythms[notes[i]].notes;
+
+      // TODO: Handle multiple notes definitions.
+      res += this.rhythms[notes[i]].notes[0];
     }
+
+    //if (!res) return '';
+    //res = type + ' clef=none notation=true tablature=false\nnotes ' + res;
 
     return res;
   }

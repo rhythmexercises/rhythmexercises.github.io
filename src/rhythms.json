@@ -6,7 +6,7 @@
       "quarter note"
     ],
     "count": "1 beat",
-    "notes": [":8 E/4"]
+    "notes": [":4 E/4"]
   },
   {
     "french": "rest",
@@ -15,7 +15,7 @@
       "quarter note rest"
     ],
     "count": "1 beat",
-    "notes": [":8 ##"]
+    "notes": [":4 ##"]
   },
   {
     "french": "tafa-fe",
@@ -25,8 +25,8 @@
     ],
     "count": "1/4 beat + 1/2 beat + 1/4 beat",
     "notes": [
-      ":16 E-EbE-E/4",
-      ":16S E/4 :8S E/4 :16S E/4"
+      ":16 E/4 :8 E/4 :16 E/4",
+      ":16 E-EbE-E/4"
     ]
   },
   {
