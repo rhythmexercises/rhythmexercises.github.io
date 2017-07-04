@@ -13,11 +13,7 @@ export class Vextab {
   id = nextID++;
 
   constructor(element, vexTab, vexArtist, vexFlow) {
-    //console.log('Vextab', element);
     this.element = element;
-
-    //this._vexTab = vexTab;
-    //this._vexArtist = vexArtist;
 
     this._vexRenderer;
     this._vexTab = vexTab;
@@ -37,7 +33,6 @@ export class Vextab {
   }
 
   markupChanged() {
-    //console.log('markupChanged', this.element, this.markup);
     this.parseMarkup(this.markup);
   }
 
@@ -45,7 +40,6 @@ export class Vextab {
     if (!markup || !this._vexRenderer) return;
 
     markup = 'tabstave clef=none notation=true tablature=false\nnotes ' + markup;
-    console.log(markup);
 
     // Reset Artist state as we're using the same instance.
     this._vexArtist.last_y = 10;

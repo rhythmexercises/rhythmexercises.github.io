@@ -1,21 +1,25 @@
 <template>
 
-  <dl>
-    <dt>Rhythm</dt>
-    <dd>
-      <vextab width="200" markup.bind="notes[0]"></vextab>
-    </dd>
-    <dt>French</dt>
-    <dd>${french}</dd>
-    <dt>Other</dt>
-    <dd>
-      <ul repeat.for="name of names">
-        <li>${name}</li>
-      </ul>
-    </dd>
-    <dt>Count</dt>
-    <dd>${count}</dd>
-  </dl>
+  <header>
+    <h1>Rhythm Exercises</h1>
+
+    <dl>
+      <dt>Rhythm</dt>
+      <dd>
+        <vextab width="200" markup.bind="notes[0]"></vextab>
+      </dd>
+      <dt>French</dt>
+      <dd><code>${french}</code></dd>
+      <dt>Other</dt>
+      <dd>
+        <ul repeat.for="name of names">
+          <li>${name}</li>
+        </ul>
+      </dd>
+      <dt>Count</dt>
+      <dd>${count}</dd>
+    </dl>
+  </header>
 
   <div class="container">
     <template repeat.for="exercise of exercises">
