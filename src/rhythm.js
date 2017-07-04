@@ -1,4 +1,4 @@
-import {Factory, inject} from 'aurelia-framework';
+import {computedFrom, Factory, inject} from 'aurelia-framework';
 import DataRhythms from 'text!./rhythms.json';
 import {Exercise} from 'exercise';
 
@@ -7,6 +7,7 @@ export class Rhythm {
   exercises: Array<Exercise> = [];
 
   constructor(exerciseModel) {
+    this.rhythms = [];
     this.previous = [];
 
     this.index = 0;
@@ -18,6 +19,16 @@ export class Rhythm {
     this.exercises = [];
 
     this._exerciseModel = exerciseModel;
+  }
+
+  @computedFrom('index')
+  get hasPrev() {
+    return (this.index > 1);
+  }
+
+  @computedFrom('index')
+  get hasNext() {
+    return (this.rhythms && this.index < this.rhythms.length - 1);
   }
 
   getExercises() {
@@ -141,13 +152,13 @@ export class Rhythm {
     if (!input) return;
 
     var index = Number(input.index) || 1;
-    var items = JSON.parse(DataRhythms);
-    var item = items[index];
+    this.rhythms = JSON.parse(DataRhythms);
+    var item = this.rhythms[index];
     if (!item) return;
 
     // Previous, including current.
     // We only show rhythms which were learnt in previous pages.
-    this.previous = items.slice(0, index+1);
+    this.previous = this.rhythms.slice(0, index+1);
 
     this.index = index;
     this.french = item.french;

@@ -1,24 +1,28 @@
 <template>
 
-  <header>
-    <h1>Rhythm Exercises</h1>
+  <header class="container">
+    <div class="shrink" show.bind="hasPrev"><a href="#/${index-1}">Prev</a></div>
+    <div class="grow">
+      <h1>Rhythm Exercises</h1>
 
-    <dl>
-      <dt>Rhythm</dt>
-      <dd>
-        <vextab width="200" markup.bind="notes[0]"></vextab>
-      </dd>
-      <dt>French</dt>
-      <dd><code>${french}</code></dd>
-      <dt>Other</dt>
-      <dd>
-        <ul repeat.for="name of names">
-          <li>${name}</li>
-        </ul>
-      </dd>
-      <dt>Count</dt>
-      <dd>${count}</dd>
-    </dl>
+      <dl>
+        <dt>Rhythm</dt>
+        <dd>
+          <vextab width="200" markup.bind="notes[0]"></vextab>
+        </dd>
+        <dt>French</dt>
+        <dd><code>${french}</code></dd>
+        <dt>Other</dt>
+        <dd>
+          <ul repeat.for="name of names">
+            <li>${name}</li>
+          </ul>
+        </dd>
+        <dt>Count</dt>
+        <dd>${count}</dd>
+      </dl>
+    </div>
+    <div class="shrink" show.bind="hasNext"><a href="#/${index+1}">Next</a></div>
   </header>
 
   <div class="container">
