@@ -7,8 +7,6 @@ export class Rhythm {
   exercises: Array<Exercise> = [];
 
   constructor(exerciseModel) {
-    console.log('Rhythm', 'constructor');
-
     this.previous = [];
 
     this.index = 0;
@@ -34,8 +32,7 @@ export class Rhythm {
       while (bin.length < 4) {
         bin = '0' + bin;
       }
-      //console.log('bin', num, last, bin);
-      //bar = Array.from(bin).map(function(n) {return Number(n);});
+
       // Replace `1 with our current `index`.
       return Array.from(bin).map(function(n) {
         return Number(n);
@@ -53,7 +50,7 @@ export class Rhythm {
     // Generate base set of bars.
     var level0 = [];
     // 4th beat Crotchet and Rest.
-    // FIXME: Fill backwards, start with crotchets, then rests.
+    // FIXME: Add last beat after generating combinations.
     for (var i=1; i>=0; i--) {
     	// Count to `111` in binary, zero-pad and append `i`.
     	for (var j=0; j<8; j++) {
@@ -67,7 +64,7 @@ export class Rhythm {
           }
 
         });
-        //console.log(j, bin, bar);
+
         level0.push(bar);
       }
     }
@@ -85,25 +82,10 @@ export class Rhythm {
 
     var genExercises = function genExercises(curr, next) {
       var out = [];
-      //if (curr.indexOf(index) === next.indexOf(index)) return out;
 
-      //console.log('curr', curr, parseInt(curr.join('')));
-      /*
-      var result = ((curr[curr.length - 1]) |
-              (curr[curr.length - 2] << 8) |
-              (curr[curr.length - 3] << 16) |
-              (curr[curr.length - 4] << 24));
-              console.log('result', result);
-      */
-
+      // FIXME: Simplier conditions if adding 4th beat afterwards.
       var curr_mask = parseInt(curr.map(function (n, k) { return (n === index && k !== 3) ? 1 : 0; }).join(''), 2);
       var next_mask = parseInt(next.map(function (n, k) { return (n === index && k !== 3) ? 1 : 0; }).join(''), 2);
-      //var bin =
-      /* >>> 0).toString(2);
-      while (bin.length < 4) {
-        bin = '0' + bin;
-      }
-      */
 
       // Find different bit set in next.
       var idx = intToBinArray((curr_mask | next_mask));
@@ -115,20 +97,10 @@ export class Rhythm {
 
       if (idx.indexOf(1) === -1) return;
 
-      //var bin = (idx >>> 0).toString(2);
-      /*
-      while (bin.length < 4) {
-        bin = '0' + bin;
-      }
-      */
-
-      //console.log('genExercises', curr, next, (curr_mask >>> 0).toString(2), (next_mask >>> 0).toString(2), idx);
-
       // FIXME: How to handle durations longer than 1/4?
       for (var k=0; k<index; k++) {
         var item = JSON.parse(JSON.stringify(curr));
         item[idx.indexOf(1)] = k;
-        //console.log('bar', item);
         out.push(item);
       }
 
@@ -138,16 +110,12 @@ export class Rhythm {
     var genLevel = function genLevel(level, depth) {
     	if (!level || depth <= 0) return;
       depth--;
-      console.log('genLevel', level, depth);
 
     	for (var i=0; i<level.length; i++) {
      		var next = (i+1 >= level.length) ? level[0] : level[i+1];
-        //console.log(next, index, next.indexOf(index));
       	if (next.indexOf(index) === -1) continue;
-        //console.log('lastIndexOf', level[i], next, level[i].lastIndexOf(1));
         if (level[i].lastIndexOf(0) === 3) continue;
 
-        //console.log('next', next, next.indexOf(index));
         var exercise = genExercises(level[i], next);
 
         // Add matching patterns with different 4th beat.
@@ -160,22 +128,16 @@ export class Rhythm {
         addExercise(exercise);
 
         // Recurse and generate exercises from each.
-        //console.log('len', exercise.filter(function (n) { return !(n.indexOf(1) >= 3 || n.indexOf(1) === -1 || n.indexOf(0) === -1); }).length);
-        //exercise.filter(filterByIndex);
         genLevel(exercise, depth);
-        //console.log('exercise', JSON.stringify(exercise));
       }
     };
 
     genLevel(level0, 2);
 
-    // TODO: Map each to notes.
-
     return res;
   }
 
   activate(input) {
-    console.log('Rhythm', 'activate', input);
     if (!input) return;
 
     var index = Number(input.index) || 1;
@@ -184,6 +146,7 @@ export class Rhythm {
     if (!item) return;
 
     // Previous, including current.
+    // We only show rhythms which were learnt in previous pages.
     this.previous = items.slice(0, index+1);
 
     this.index = index;
@@ -194,32 +157,9 @@ export class Rhythm {
 
     var model = this._exerciseModel;
     this.exercises = this.getExercises().map(function (exercise) {
-
-      // Replace each index with notes.
-      /*
-      var out = [];
-      var i = exercise.length;
-      while (i--) {
-        out[i] = '';
-        var j = exercise[i].length;
-        while (j--) {
-          if (out[i]) out[i] += ' ';
-          out[i] += items[exercise[i][j]].notes;
-        }
-      }
-      */
-
       return model(exercise);
     });
 
-    // Generate exercises.
-    /*
-    // Trim `items` to "before this exercise".
-    const newItem = this._exerciseModel(item);
-    console.log('newItem', newItem);
-    //this.observeItem(newItem);
-    this.exercises.push(newItem);
-    */
   }
 
 }
