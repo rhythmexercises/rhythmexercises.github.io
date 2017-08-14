@@ -18,24 +18,158 @@
     "notes": [":4 ##"]
   },
   {
-    "french": "tafa-fe",
+    "french": "ta te",
     "names": [
-      "semiquaver quaver semiquaver",
-      "sixteenth note, eigth note, sixteenth note"
+      "two quavers",
+      "two eighth notes"
     ],
-    "count": "1/4 beat + 1/2 beat + 1/4 beat",
-    "notes": [
-      ":16 E/4 :8 E/4 :16 E/4",
-      ":16 E-EbE-E/4"
-    ]
+    "count": "1/2 beat + 1/2 beat",
+    "notes": [":8 E/4 :8 E/4"]
+  },
+  {
+    "french": "tafatefe",
+    "names": [
+      "four semiquavers",
+      "four sixteenth notes"
+    ],
+    "count": "1/4 beat + 1/4 beat + 1/4 beat + 1/4 beat",
+    "notes": [":16 E/4 :16 E/4 :16 E/4 :16 E/4"]
+  },
+  {
+    "french": "ta tefe",
+    "names": [
+      "quaver - two semiquavers",
+      "one eighth note and two sixteenth notes"
+    ],
+    "count": "1/2 beat + 1/4 beat + 1/4 beat",
+    "notes": [":8 E/4 :16 E/4 :16 E/4"]
+  },
+  {
+    "french": "tafa te",
+    "names": [
+      "two semiquavers - quaver",
+      "two sixteenth notes and one eighth note"
+    ],
+    "count": "1/4 beat + 1/4 beat + 1/2 beat",
+    "notes": [":16 E/4 :16 E/4 :8 E/4"]
+  },
+  {
+    "french": "ta te ti",
+    "names": [
+      "quaver triplet",
+      "eighth note triplet"
+    ],
+    "count": "1/3 beat + 1/3 beat + 1/3 beat",
+    "notes": [":8 E/4 :8 E/4 :8 E/4 ^3^"]
   },
   {
     "french": "ta - te",
     "names": [
       "dotted - quaver - semiquaver",
-      "dotted eigth note and sixteenth note"
+      "dotted eighth note and sixteenth note"
     ],
     "count": "3/4 beat + 1/4 beat",
     "notes": [":8d E/4 :16 E/4"]
+  },
+  {
+    "french": "tafa-fe",
+    "names": [
+      "semiquaver quaver semiquaver",
+      "sixteenth note, eighth note, sixteenth note"
+    ],
+    "count": "1/4 beat + 1/2 beat + 1/4 beat",
+    "notes": [
+      ":16 E/4 :8 E/4 :16 E/4",
+      ":16 E-EsE-E/4"
+    ]
+  },
+  {
+    "french": "tafa-e",
+    "names": [
+      "semiquaver - dotted quaver",
+      "sixteenth note and dotted eighth note"
+    ],
+    "count": "1/4 beat + 3/4 beat",
+    "notes": [
+      ":16 E/4 :8d E/4",
+      ":16 E/4E/4 :8s E/4"
+    ]
+  },
+  {
+    "french": "rest - te (reste)",
+    "names": [
+      "quaver rest - quaver",
+      "eighth note rest and eighth note"
+    ],
+    "count": "1/2 beat + 1/2 beat",
+    "notes": [":8 ## :8 E/4"]
+  },
+  {
+    "french": "rest tefe (res-tefe)",
+    "names": [
+      "quaver rest - two semiquaver",
+      "eighth note rest and two sixteenth note"
+    ],
+    "count": "1/2 beat + 1/4 beat + 1/4 beat",
+    "notes": [":8 ## :16 E/4 :16 E/4"]
+  },
+  {
+    "french": "rest fatefe (resfatefe)",
+    "names": [
+      "semiquaver rest - three semiquaver",
+      "sixteenth note rest and three sixteenth note"
+    ],
+    "count": "1/4 beat + 1/4 beat + 1/4 beat + 1/4 beat",
+    "notes": [":16 ## :16 E/4 :16 E/4 :16 E/4"]
+  },
+  {
+    "french": "rest - fe",
+    "names": [
+      "dotted quaver rest - semiquaver",
+      "dotted eighth note rest and sixteenth note"
+    ],
+    "count": "1/4 beat + 1/4 beat + 1/4 beat + 1/4 beat",
+    "notes": [":8d ## :16 E/4"]
+  },
+  {
+    "french": "rest - fate (resfate)",
+    "names": [
+      "semiquaver rest, semiquaver quaver",
+      "sixteenth note rest and sixteenth note and eighth note"
+    ],
+    "count": "1/4 beat + 1/4 beat + 1/2 beat",
+    "notes": [":16 ## :16 E/4 :8 E/4"]
+  },
+  {
+    "french": "rest te ti (resteti)",
+    "names": [
+      ""
+    ],
+    "count": "1/3 beat + 1/3 beat + 1/3 beat",
+    "notes": [
+      ":8 ## :8 E/4 :8 E/4 ^3^"
+    ]
+  },
+  {
+    "french": "rest fa-fe (resfa-fe)",
+    "names": [
+      "semiquaver rest, quaver, semiquaver quaver",
+      "sixteenth note rest and eighth note and sixteenth note"
+    ],
+    "count": "1/4 beat + 1/2 beat + 1/4 beat",
+    "notes": [
+      ":16 ## :8 E/4 :16 E/4"
+    ]
+  },
+  {
+    "french": "rest fa-e (resfa-e)",
+    "names": [
+      "semiquaver rest, dotted quaver",
+      "sixteenth note rest and dotted eighth note"
+    ],
+    "count": "1/4 beat + 3/4 beat",
+    "notes": [
+      ":16 ## :8d E/4"
+    ]
   }
 ]
